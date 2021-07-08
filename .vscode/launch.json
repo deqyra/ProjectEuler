@@ -1,0 +1,15 @@
+{
+    "configurations": [
+    {
+        "name": "Run latest",
+        "type": "cppvsdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/latest.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}/build/",
+        "environment": [],
+        "console": "integratedTerminal"
+    }
+    ]
+}

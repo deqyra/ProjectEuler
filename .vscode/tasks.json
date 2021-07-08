@@ -1,0 +1,61 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build latest solution",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-File",
+                "./scripts/BuildLatestSolution.ps1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        },
+        {
+            "label": "Create new solution",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-File",
+                "./scripts/CreateNewSolution.ps1"
+            ],
+            "group": "none",
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        },
+        {
+            "label": "Generate with CMake",
+            "type": "shell",
+            "command": "cd",
+            "args": [
+                "build",
+                "&&",
+                "cmake",
+                ".."
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-rf",
+                "./build/*"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        }
+    ]
+}
