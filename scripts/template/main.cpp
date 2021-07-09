@@ -1,10 +1,10 @@
 #include "main.hpp"
 
-#include <iostream>
-
 #ifdef _WIN32
 	#include <windows.h>
 #endif
+
+using namespace std;
 
 int main(int argc, char** argv)
 {
@@ -12,16 +12,20 @@ int main(int argc, char** argv)
 		SetConsoleOutputCP(65001);
 	#endif
     
-    std::cout << "Problem n°" << ProblemNumber << ": solving..." << std::endl;
+    cout << "Problem n°" << ProblemNumber << ": solving..." << endl;
 
-    long long int solution = solve();
+    ll solution = solve();
+    // solution = 
 
-    std::cout << "Solution: " << solution << std::endl;
+    cout << "Solution: " << solution << endl;
 
     return 0;
 }
 
-long long int solve()
+/// @see https://projecteuler.net/problem=YYYY
+ll solve()
 {
-    return 0;
+    ll result = 0;
+    
+    return result;
 }

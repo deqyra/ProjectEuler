@@ -5,8 +5,8 @@ $solutionRoot = Join-Path $repoRoot 'solutions/'
 
 # Find the last solved problem number
 $solutions = Get-ChildItem -Path $solutionRoot
-$oldIndex = ($solutions.count).ToString()
-$newIndex = ($solutions.count + 1).ToString()
+$oldIndex = ($solutions.count - 1).ToString()
+$newIndex = ($solutions.count).ToString()
 
 # Pad indices with as many 0's as required to make them 4 digits long
 for (; -Not ($oldIndex.Length -eq 4);) {
@@ -26,12 +26,15 @@ $templateFolder = Join-Path $scriptFolder 'template/'
 $templateHeaderFile = Join-Path $templateFolder 'main.hpp'
 $headerContents = Get-Content $templateHeaderFile
 $headerContents = $headerContents.Replace('XXXX', $newIndex)
+$headerContents = $headerContents.Replace('YYYY', $solutions.count)
 $newHeaderFile = Join-Path $newSolutionRoot 'main.hpp'
 Set-Content -Path $newHeaderFile -Value $headerContents
 
 # Create source file from template
 $templateSourceFile = Join-Path $templateFolder 'main.cpp'
 $sourceContents = Get-Content $templateSourceFile
+$sourceContents = $sourceContents.Replace('XXXX', $newIndex)
+$sourceContents = $sourceContents.Replace('YYYY', $solutions.count)
 $newSourceFile = Join-Path $newSolutionRoot 'main.cpp'
 Set-Content -Path $newSourceFile -Value $sourceContents
 

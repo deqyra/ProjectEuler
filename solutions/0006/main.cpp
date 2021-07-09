@@ -15,25 +15,39 @@ int main(int argc, char** argv)
     cout << "Problem n°" << ProblemNumber << ": solving..." << endl;
 
     ll solution = solve();
-    // solution = 233168
+    // solution = 25164150
 
     cout << "Solution: " << solution << endl;
 
     return 0;
 }
 
-/// @see https://projecteuler.net/problem=1
+/// @see https://projecteuler.net/problem=6
 ll solve()
 {
     ll result = 0;
+    
+    return squareOfSum(100) - sumOfSquares(100);
+}
 
-    for (int i = 1; i < 1000; i++)
+ll sumOfSquares(int n)
+{
+    ll sum = 0;
+    for (int i = 1; i <= n; i++)
     {
-        if ((i % 3 == 0) || (i % 5 == 0))
-        {
-            result += i;
-        }
+        sum += i * i;
     }
 
-    return result;
+    return sum;
+}
+
+ll squareOfSum(int n)
+{
+    ll sum = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        sum += i;
+    }
+
+    return sum * sum;
 }

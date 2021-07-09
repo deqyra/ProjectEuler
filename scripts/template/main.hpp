@@ -1,13 +1,15 @@
 #ifndef PROJECTEULER__SOLUTIONS__XXXX__MAIN_HPP
 #define PROJECTEULER__SOLUTIONS__XXXX__MAIN_HPP
 
-static constexpr unsigned int ProblemNumber = XXXX;
+#include "../util.hpp"
 
-/// @brief Solves problem XXXX of Project Euler.
+static constexpr ull ProblemNumber = YYYY;
+
+/// @brief Solves problem YYYY of Project Euler.
 ///
-/// @see https://projecteuler.net/problem=XXXX
+/// @see https://projecteuler.net/problem=YYYY
 ///
-/// @return The solution for problem XXXX of Project Euler.
-long long int solve();
+/// @return The solution for problem YYYY of Project Euler.
+ll solve();
 
 #endif//PROJECTEULER__SOLUTIONS__XXXX__MAIN_HPP

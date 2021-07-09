@@ -5,7 +5,7 @@ $solutionRoot = Join-Path $repoRoot 'solutions/'
 
 # Find the last solved problem number
 $solutions = Get-ChildItem -Path $solutionRoot
-$lastIndex = ($solutions.count).ToString()
+$lastIndex = ($solutions.count - 1).ToString()
 
 # Pad index with as many 0's as required to make it 4 digits long
 for (; -Not ($lastIndex.Length -eq 4);) {
