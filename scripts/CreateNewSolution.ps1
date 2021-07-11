@@ -42,6 +42,7 @@ Set-Content -Path $newSourceFile -Value $sourceContents
 $templateCMakeFile = Join-Path $templateFolder 'CMakeLists.txt'
 $CMakeFileContents = Get-Content $templateCMakeFile
 $CMakeFileContents = $CMakeFileContents.Replace('XXXX', $newIndex)
+$CMakeFileContents = $CMakeFileContents.Replace('YYYY', $solutions.count)
 $newCMakeFile = Join-Path $newSolutionRoot 'CMakeLists.txt'
 Set-Content -Path $newCMakeFile -Value $CMakeFileContents
 
@@ -52,6 +53,7 @@ $mainCMakeFileContents = Get-Content $mainCMakeFile
 $templateCommandFile = Join-Path $templateFolder 'cmake_subdir_command.cmake'
 $templateCommand = Get-Content $templateCommandFile
 $templateCommand = $templateCommand.Replace('XXXX', $newIndex)
+$templateCommand = $templateCommand.Replace('YYYY', $solutions.count)
 
 # Append command to main CMakeLists.txt
 $mainCMakeFileContents = $mainCMakeFileContents + $templateCommand
@@ -59,3 +61,9 @@ $previousTarget = 'ProjectEuler' + $oldIndex
 $newTarget = 'ProjectEuler' + $newIndex
 $mainCMakeFileContents = $mainCMakeFileContents.Replace($previousTarget, $newTarget)
 Set-Content -Path $mainCMakeFile -Value $mainCMakeFileContents
+
+# Update solved count in README.md
+$readmeFile = Join-Path $repoRoot 'README.md'
+$readmeContents = Get-Content $readmeFile
+$readmeContents = $readmeContents.Replace(($solutions.count - 2).ToString() + " / 760", ($solutions.count - 1).ToString() + " / 760")
+Set-Content -Path $readmeFile -Value $readmeContents

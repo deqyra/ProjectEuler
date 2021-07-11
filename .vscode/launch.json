@@ -4,9 +4,8 @@
         "name": "Run latest",
         "type": "cppvsdbg",
         "request": "launch",
-        "program": "${workspaceFolder}/build/latest.exe",
         "args": [],
-        "stopAtEntry": false,
+        "stopAtEntry": true,
         "cwd": "${workspaceFolder}/build/",
         "environment": [],
         "console": "integratedTerminal"
