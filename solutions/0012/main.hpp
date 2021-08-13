@@ -14,12 +14,8 @@ ll solve();
 
 ll nthTriangularNumber(ll n);
 
-ll nDivisors(ll v);
-
 const vll& primesUpTo(ll n);
 
 mllll primeFactorDecompositionMap(ll n);
-
-vll primeFactorDecomposition(ll n);
 
 #endif//PROJECTEULER__SOLUTIONS__0012__MAIN_HPP

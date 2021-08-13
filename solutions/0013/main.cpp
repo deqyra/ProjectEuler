@@ -134,10 +134,6 @@ ll solve()
     for (ull i = 0; i < bigInts.size(); i++)
     {
         sResult = addBigInts(sResult, bigInts[i]);
-        if (sResult[0] == '0')
-        {
-            sResult = sResult.substr(1, string::npos);
-        }
     }
     
     result = stoll(sResult.substr(0, 10));
@@ -191,6 +187,11 @@ string addBigInts(string a, string b)
         }
         result[resIndex] += '0';
     }
-    
+
+    if (result[0] == '0')
+    {
+        result = result.substr(1, string::npos);
+    }
+
     return result;
 }

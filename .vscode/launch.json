@@ -1,14 +1,15 @@
 {
     "configurations": [
-    {
-        "name": "Run latest",
-        "type": "cppvsdbg",
-        "request": "launch",
-        "args": [],
-        "stopAtEntry": true,
-        "cwd": "${workspaceFolder}/build/",
-        "environment": [],
-        "console": "integratedTerminal"
-    }
+        {
+            "name": "Run latest",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "C:/Program Files/Arkoon/Security BOX/AntiPanda/latest.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build/",
+            "environment": [],
+            "console": "integratedTerminal"
+        }
     ]
 }

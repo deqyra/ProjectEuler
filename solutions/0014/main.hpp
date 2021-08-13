@@ -14,7 +14,7 @@ ll solve();
 
 const mllll& collatzSequenceMap(ll v);
 
-ll indexOfLongestChain(const mllll& m, ll maxIndex);
+mllll collatzSequenceLengthMap(const mllll& m, ll maxIndex);
 
 ll nextCollatzNumber(ll v);
 

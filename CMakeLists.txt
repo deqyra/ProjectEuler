@@ -13,7 +13,7 @@ set(CMAKE_CXX_STANDARD 20)
 add_custom_target("copy_latest")
 add_custom_command(
     TARGET "copy_latest"
-    COMMAND ${CMAKE_COMMAND} -E copy "$<TARGET_FILE:ProjectEuler0015>" "${CMAKE_BINARY_DIR}/latest.exe"
+    COMMAND ${CMAKE_COMMAND} -E copy "$<TARGET_FILE:ProjectEuler0021>" "${CMAKE_BINARY_DIR}/latest.exe"
 )
 
 # Problem n°1
@@ -60,4 +60,22 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/solutions/0014 ${CMAKE_BINARY_DIR}/0014)
 
 # Problem n°15
 add_subdirectory(${CMAKE_SOURCE_DIR}/solutions/0015 ${CMAKE_BINARY_DIR}/0015)
+
+# Problem n°16
+add_subdirectory(${CMAKE_SOURCE_DIR}/solutions/0016 ${CMAKE_BINARY_DIR}/0016)
+
+# Problem n°17
+add_subdirectory(${CMAKE_SOURCE_DIR}/solutions/0017 ${CMAKE_BINARY_DIR}/0017)
+
+# Problem n°18
+add_subdirectory(${CMAKE_SOURCE_DIR}/solutions/0018 ${CMAKE_BINARY_DIR}/0018)
+
+# Problem n°19
+add_subdirectory(${CMAKE_SOURCE_DIR}/solutions/0019 ${CMAKE_BINARY_DIR}/0019)
+
+# Problem n°20
+add_subdirectory(${CMAKE_SOURCE_DIR}/solutions/0020 ${CMAKE_BINARY_DIR}/0020)
+
+# Problem n°21
+add_subdirectory(${CMAKE_SOURCE_DIR}/solutions/0021 ${CMAKE_BINARY_DIR}/0021)
 

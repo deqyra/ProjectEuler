@@ -26,8 +26,20 @@ int main(int argc, char** argv)
 ll solve()
 {
     const mllll& collatzMap = collatzSequenceMap(1000000);
-    
-    return indexOfLongestChain(collatzMap, 1000000);
+    const mllll& lengthMap = collatzSequenceLengthMap(collatzMap, 1000000);
+
+    ll maxLength = 0;
+    ll index = 0;
+    for (const auto& [c, l]: lengthMap)
+    {
+        if (l > maxLength)
+        {
+            maxLength = l;
+            index = c;
+        }
+    }
+
+    return index;
 }
 
 const mllll& collatzSequenceMap(ll maxIndex)
@@ -52,7 +64,7 @@ const mllll& collatzSequenceMap(ll maxIndex)
     return sequenceMap;
 }
 
-ll indexOfLongestChain(const mllll& m, ll maxIndex)
+mllll collatzSequenceLengthMap(const mllll& m, ll maxIndex)
 {
     static mllll lengthMap = 
     {
@@ -80,18 +92,7 @@ ll indexOfLongestChain(const mllll& m, ll maxIndex)
         }
     }
 
-    ll maxLength = 0;
-    ll index = 0;
-    for (const auto& [c, l]: lengthMap)
-    {
-        if (l > maxLength)
-        {
-            maxLength = l;
-            index = c;
-        }
-    }
-
-    return index;
+    return lengthMap;
 }
 
 ll nextCollatzNumber(ll v)

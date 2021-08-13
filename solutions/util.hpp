@@ -2,6 +2,7 @@
 #define PROJECTEULER__SOLUTIONS__UTIL_HPP
 
 #include <algorithm>
+#include <cassert>
 #include <cmath>
 #include <iostream>
 #include <map>
@@ -11,6 +12,7 @@
 
 using ll = long long int;
 using ull = unsigned long long int;
+using mcc = std::map<char, char>;
 using mii = std::map<int, int>;
 using mill = std::map<int, ll>;
 using mlli = std::map<ll, int>;
